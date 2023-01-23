@@ -15,6 +15,7 @@ vim.keymap.set('n', '<leader>ff', telescopeBuiltin.find_files, {})
 vim.keymap.set('n', '<leader>fg', telescopeBuiltin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', telescopeBuiltin.buffers, {})
 vim.keymap.set('n', '<leader>fh', telescopeBuiltin.help_tags, {})
+vim.keymap.set('n', '<leader>fr', ':Telescope lsp_references<CR>', {})
 
 
 -- key map to lsp funcs
@@ -100,3 +101,11 @@ vim.cmd([[
 -- Spawn lazygit
 vim.keymap.set('n', '<leader>gg', ':FloatermNew --height=0.7 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit<CR>')
 vim.keymap.set('n', '<leader>gf', ':FloatermNew --height=0.7 --width=0.9 --wintype=float --name=ranger --autoclose=2 ranger<CR>')
+
+
+-- dap debugger
+vim.keymap.set('n', '<leader>dt', ':lua require"dap".toggle_breakpoint()<CR>')
+vim.keymap.set('n', '<leader>dc', ':lua require"dap".continue()<CR>')
+vim.keymap.set('n', '<leader>di', ':lua require"dap".step_into()<CR>')
+-- remap to toggle dapui
+vim.keymap.set('n', '<leader>dd', ':lua require"dapui".toggle()<CR>')
